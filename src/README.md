@@ -15,4 +15,4 @@ Tools
 - https://www.mongodb.com/try/download/compass
 
 Lesson
-- 6: https://www.leveluptutorials.com/tutorials/node-fundamentals-authentication/forms-with-vanillajs
+- 10: leveluptutorials.com/tutorials/node-fundamentals-authentication/user-records
