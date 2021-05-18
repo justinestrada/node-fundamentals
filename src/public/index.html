@@ -12,34 +12,65 @@
 	<form id="register-form">
 		<input type="email" name="email"/>
 		<input type="password" name="password"/>
-		<button type="submit">Submit</button>
+		<button type="submit">Register</button>
 	</form>
-	<script type="text/javascript">
-	;(() => {
-		const form = document.getElementById('register-form')
-		form.addEventListener('submit', async (e) => {
-			e.preventDefault();
-			try {
-				const values = Object.values(form).reduce((obj, field) => {
-					if (field.name) {
-						obj[field.name] = field.value					
-					}
-					return obj
-				}, {})
-				// console.log('values', values)
-				const res = await fetch('/api/register', {
-					method: 'POST',
-					body: JSON.stringify(values),
-					headers: {
-						'Content-Type': 'application/json; charset=UTF-8',
-					},
-				})
-				console.log(res)
-			} catch (e) {
-				console.error(e)
-			}
-		})
-	})()
-	</script>
+	<hr/>
+	<h3>Login Form</h3>
+	<form id="login-form">
+		<input type="email" name="email"/>
+		<input type="password" name="password"/>
+		<!-- todo: confirm password -->
+		<button type="submit">Login</button>
+	</form>
+<script type="text/javascript">
+;(() => {
+	const registerForm = document.getElementById('register-form')
+	registerForm.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		try {
+			const values = Object.values(registerForm).reduce((obj, field) => {
+				if (field.name) {
+					obj[field.name] = field.value					
+				}
+				return obj
+			}, {})
+			// console.log('values', values)
+			const res = await fetch('/api/register', {
+				method: 'POST',
+				body: JSON.stringify(values),
+				headers: {
+					'Content-Type': 'application/json; charset=UTF-8',
+				},
+			})
+			console.log(res)
+		} catch (e) {
+			console.error(e)
+		}
+	})
+	const loginForm = document.getElementById('login-form')
+	loginForm.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		try {
+			const values = Object.values(loginForm).reduce((obj, field) => {
+				if (field.name) {
+					obj[field.name] = field.value					
+				}
+				return obj
+			}, {})
+			// console.log('values', values)
+			const res = await fetch('/api/authorize', {
+				method: 'POST',
+				body: JSON.stringify(values),
+				headers: {
+					'Content-Type': 'application/json; charset=UTF-8',
+				},
+			})
+			console.log(res)
+		} catch (e) {
+			console.error(e)
+		}
+	})
+})()
+</script>
 </body>
 </html>

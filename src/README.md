@@ -15,4 +15,4 @@ Tools
 - https://www.mongodb.com/try/download/compass
 
 Lesson
-- 10: leveluptutorials.com/tutorials/node-fundamentals-authentication/user-records
+- 13: https://www.leveluptutorials.com/tutorials/node-fundamentals-authentication/httponly-cookies-vs-browser
